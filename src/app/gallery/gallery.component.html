@@ -1,0 +1,26 @@
+<div class="navmenu">
+  Images Gallery
+</div>
+<div class="container-fluid">
+  <div class="content--box" appImageHover>
+    <div class="img--container" *ngFor="let image of images" id="content">
+      <img src={{image.thumb}} alt={{image.description}} name={{image.description}} id="image">
+    </div>
+    <div id="myModal" class="modal">
+      <span class="close cursor" (click)="onClose()">&times;</span>
+      <div class="mySlides">
+        <img style="width:100%" class="myImage" id="myImage">
+      </div>
+      <div class="content">
+        <div class="thumb" *ngFor="let image of images">
+          <img class="demo" src={{image.thumb}} (click)="currentSlide(image.thumb,image.description)" alt={{image.description}}>
+        </div>
+      </div>
+    </div>
+    <div class="zoom--effect">
+      <img class="dynamicImage">
+    </div>
+  </div>
+</div>
+<div class="footer">
+</div>
